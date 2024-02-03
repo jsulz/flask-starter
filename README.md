@@ -1,0 +1,15 @@
+- run.py initializes the flask app and provides the context for it to run
+- poetry new is used to create the folder structure initially and is then used to manage the dependencies
+- requirements.txt is created as part of a pre-commit hook so that Docker can reconstruct the project dependencies with pip instead of having to bring in poetry during the build
+- poetry is also used to provide a local virtual environment for testing
+- The .gitignore keeps unnecessary Flask, pytest, VScode and Javascript build artifacts out of the repository
+- Most of the project itself is held inside the directory of the same name as the repository; there we have folders for:
+  - static (contains all static files (.css and image files) as well as our Javascript + React + Typescript files)
+  - templates (holds all the jinja files for different routes)
+- In this folder the main files for running the app are available as well
+  - app.py creates the Flask application and loads any context for the application (Blueprints, database connections, testing configurations, application configuration, etc)
+  - db.py creates the connection to the database we're currently working with
+  - model.py defines the database schema
+  - [pakage].py is for the main application logic/routes
+- CI/CD is handled by GitHub Actions in the .github folder
+- The project is deployed to Google Cloud Run and run in a container. The Dockerfile defines the build process and compilation of that container.
