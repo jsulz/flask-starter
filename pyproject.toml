@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "flask-starter"
 version = "0.1.0"
-description = "Starting point for my Flask applications"
+description = "Starting point for my Flask applications run on Google Cloud Run"
 authors = ["Jared Sulzdorf <j.sulzdorf@gmail.com>"]
 readme = "README.md"
 
